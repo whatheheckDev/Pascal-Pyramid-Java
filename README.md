@@ -10,5 +10,5 @@ Prerquisities: Java 8+ installed on your computer
 4. Run the program by entering java Main in the terminal.
 
 # How to use
-Input a number of layers that you would like to generate (0 returns the "top" of the pyramid)
+Input a number of layers that you would like to generate (0 returns the "top" of the pyramid). The upper bound is 40.
 Each individual layer will be shows in the terminal
