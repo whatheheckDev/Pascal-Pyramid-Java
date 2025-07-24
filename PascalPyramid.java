@@ -5,14 +5,14 @@ public class PascalPyramid {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = getNumber();
-        int[][][] pyramid = new int[n + 1][][];
-        int[][] triangle = pascalTriangle(n);
+        long[][][] pyramid = new long[n + 1][][];
+        long[][] triangle = pascalTriangle(n);
         for (int i = 0; i < n + 1; i++) {
-            pyramid[i] = new int[i + 1][];
+            pyramid[i] = new long[i + 1][];
             System.out.println("Layer " + i + ":");
             System.out.println("");
             for (int j = 0; j < i + 1; j++) {
-                pyramid[i][j] = new int[j + 1];
+                pyramid[i][j] = new long[j + 1];
                 for (int k = 0; k < i - j; k++) {
                     System.out.print(" ");
                 }
@@ -26,10 +26,10 @@ public class PascalPyramid {
         }
     }
     
-    public static int[][] pascalTriangle(int n) {
-        int[][] triangle = new int[n + 1][];
+    public static long[][] pascalTriangle(int n) {
+        long[][] triangle = new long[n + 1][];
         for (int i = 0; i < n + 1; i++) {
-            triangle[i] = new int[i + 1];
+            triangle[i] = new long[i + 1];
             for (int j = 0; j < i + 1; j++) {
                 if (j == 0 || j == i) {
                     triangle[i][j] = 1;
@@ -41,7 +41,7 @@ public class PascalPyramid {
         return triangle;
     }
     
-    
+
     public static int getNumber() {
         Scanner sc = new Scanner(System.in);
         int n = 0;
@@ -50,6 +50,14 @@ public class PascalPyramid {
         }
         catch (InputMismatchException e) {
             System.out.println("Input a number!");
+            getNumber();
+        }
+        if (n < 0) {
+            System.out.println("Should be positive or zero");
+            getNumber();
+        }
+        else if (n > 40) {
+            System.out.println("Don't.");
             getNumber();
         }
         return n;
